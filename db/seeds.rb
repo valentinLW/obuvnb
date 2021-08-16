@@ -10,7 +10,7 @@ brand = %w[nike adidas reebok dr.martens puma]
   )
 end
 
-50.times do
+3.times do
   Shoe.create(
     model: "#{brand.sample.capitalize} #{Faker::JapaneseMedia::DragonBall.character}",
     price: rand(23..999),
