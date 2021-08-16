@@ -1,17 +1,14 @@
 <h1>OBUVnB</h1>
-
 <h2>Flashy shoes for rent.</h2>
+
 <div class="flexbox">
   <% @shoes.each do |shoe| %>
-    <%= link_to shoe_path(shoe), class: "text-decoration-none" do %>
-      <div class="card-product">
-        <%= cl_image_tag shoe.image1.key, height: 300, width: 400, crop: :fill %>
-        <div class="card-product-infos">
-          <h2><%= shoe.model %></h2>
-          <p><%= shoe.description %></p>
-          <h3><%= shoe.address%></h3><h3><%= shoe.price %> €</h3>
+      <div class="cards">
+      <%= link_to shoe_path(shoe), class: "text-decoration-none" do %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path shoe.image1.key %>)">
+        <%= shoe.model %> <%= shoe.price %> €
         </div>
       </div>
-    <% end %>
-<% end %>
+     <% end %>
+  <% end %>
 </div>

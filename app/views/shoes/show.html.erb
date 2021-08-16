@@ -11,7 +11,10 @@
       <div class="card-product-infos" alt="some shoe">
     <h1><%= @shoe.model %> </h1>
     <h2><%= @shoe.description %></h2>
-    <h3><%= @shoe.address %></h3>
-    <h4><%= @shoe.price %></h4>
+    <h3>Location: <%= @shoe.address %></h3>
+    <h4>Price:<%= @shoe.price %> €</h4>
+    <h4>Size: <%= @shoe.size %> </h4>
   </div>
+
+  <%= link_to 'Back to all the shoes', shoes_path %>
 </div>
