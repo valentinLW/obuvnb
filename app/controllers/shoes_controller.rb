@@ -10,7 +10,7 @@ class ShoesController < ApplicationController
     @shoe.user = current_user
 
     if @shoe.save!
-      raise
+      redirect_to shoe_path(@shoe)
     else
       render :new
     end
@@ -26,7 +26,15 @@ class ShoesController < ApplicationController
   private
 
   def shoe_params
-    params.require(:shoe).permit(:address, :model, :size, :price, :description, :image1, :image2, :image3, :image4, :image5)
+    params.require(:shoe).permit(
+      :address,
+      :model,
+      :size,
+      :price,
+      :description,
+      :image1, :image2,
+      :image3, :image4, :image5
+    )
   end
 
   def set_shoe
