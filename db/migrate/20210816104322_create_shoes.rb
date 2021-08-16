@@ -5,7 +5,7 @@ class CreateShoes < ActiveRecord::Migration[6.0]
       t.string :model
       t.float :size
       t.integer :price
-      t.string :description
+      t.text :description
       t.references :user, null: false, foreign_key: true
 
       t.timestamps
