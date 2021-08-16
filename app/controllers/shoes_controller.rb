@@ -1,4 +1,6 @@
 class ShoesController < ApplicationController
+  before_action :set_shoe, only: [:show]
+
   def new
     @shoe = Shoe.new
   end
@@ -14,9 +16,20 @@ class ShoesController < ApplicationController
     end
   end
 
+  def index
+    @shoes = Shoe.all
+  end
+
+  def show
+  end
+
   private
 
   def shoe_params
     params.require(:shoe).permit(:address, :model, :size, :price, :description, :image1, :image2, :image3, :image4, :image5)
+  end
+
+  def set_shoe
+    @shoe = Shoe.find(params[:id])
   end
 end
