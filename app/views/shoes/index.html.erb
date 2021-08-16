@@ -4,14 +4,11 @@
 <div class="flexbox">
   <% @shoes.each do |shoe| %>
     <%= link_to shoe_path(shoe), class: "text-decoration-none" do %>
-      <div class="card-product">
-        <img src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/a71da6cd-b3f1-4675-b830-32e6aa531eea/dunk-low-schuh-fur-altere-j3ZLkD.png" />
-        <div class="card-product-infos">
-          <h2><%= shoe.model %></h2>
-          <p><%= shoe.description %></p>
-          <h3><%= shoe.address%></h3><h3><%= shoe.price %> €</h3>
-        </div>
-      </div>
+      <div class="cards">
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path shoe.image1.key %>)">
+    <%= shoe.model %> <%= shoe.price %> €
+  </div>
+</div>
     <% end %>
 <% end %>
 </div>
