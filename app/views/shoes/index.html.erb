@@ -1,17 +1,21 @@
 <h1>OBUVnB</h1>
 
 <h2>Flashy shoes for rent.</h2>
-<div class="flexbox">
+<div class="shoe-grid">
   <% @shoes.each do |shoe| %>
     <%= link_to shoe_path(shoe), class: "text-decoration-none" do %>
-      <div class="card-product">
-        <%= cl_image_tag shoe.image1.key, height: 300, width: 400, crop: :fill %>
-        <div class="card-product-infos">
-          <h2><%= shoe.model %></h2>
-          <p><%= shoe.description %></p>
-          <h3><%= shoe.address%></h3><h3><%= shoe.price %> €</h3>
-        </div>
+      <div class="shoe-thumbnail tsmall">
+        <div class="avatar"></div>
+        <%= cl_image_tag shoe.image1.key %>
       </div>
     <% end %>
-<% end %>
+  <% end %>
+  <% @shoes.each do |shoe| %>
+    <%= link_to shoe_path(shoe), class: "text-decoration-none" do %>
+      <div class="shoe-thumbnail tbig">
+        <div class="avatar"></div>
+        <%= cl_image_tag shoe.image1.key %>
+      </div>
+    <% end %>
+  <% end %>
 </div>

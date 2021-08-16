@@ -1,0 +1,33 @@
+.shoe-grid {
+  display: flex;
+}
+
+.shoe-thumbnail {
+  position: relative;
+  margin-right: 3em;
+  img {
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+    border: 0.3em solid lightgrey;
+  }
+}
+
+.avatar {
+    width: 4em;
+    height: 4em;
+    border-radius: 50%;
+    background-color: grey;
+    position: absolute;
+    z-index: 5;
+    right: -1em;
+    top: 6.5em;
+}
+
+.tbig{
+  font-size: 15px;
+}
+
+.tsmall {
+  font-size: 7px;
+}
