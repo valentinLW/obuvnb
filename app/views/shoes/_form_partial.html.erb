@@ -1,0 +1,15 @@
+
+<%= simple_form_for @shoe do |f| %>
+  <%= f.input  :model %>
+  <%= f.input  :size %>
+  <%= f.input  :price %>
+  <%= f.input  :description %>
+  <%= f.input  :address %>
+  <%= f.input :image1, as: :file %>
+  <%= f.input :image2, as: :file %>
+  <%= f.input :image3, as: :file %>
+  <%= f.input :image4, as: :file %>
+  <%= f.input :image5, as: :file %>
+
+  <%= f.button :submit, class: "btn btn-primary" %>
+<% end %>

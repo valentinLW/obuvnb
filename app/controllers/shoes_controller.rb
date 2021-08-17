@@ -1,5 +1,5 @@
 class ShoesController < ApplicationController
-  before_action :set_shoe, only: [:show]
+  before_action :set_shoe, only: %i[show edit update]
 
   def new
     @shoe = Shoe.new
@@ -14,6 +14,14 @@ class ShoesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+  end
+
+  def update
+    @shoe.update(shoe_params)
+    redirect_to shoe_path(@shoe)
   end
 
   def index

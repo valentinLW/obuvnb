@@ -1,15 +1,3 @@
-<h1>Your new shoe</h1>
-<%= simple_form_for @shoe do |f| %>
-  <%= f.input  :model %>
-  <%= f.input  :size %>
-  <%= f.input  :price %>
-  <%= f.input  :description %>
-  <%= f.input  :address %>
-  <%= f.input :image1, as: :file %>
-  <%= f.input :image2, as: :file %>
-  <%= f.input :image3, as: :file %>
-  <%= f.input :image4, as: :file %>
-  <%= f.input :image5, as: :file %>
+<h1>Add a new pair of shoes</h1>
 
-  <%= f.button :submit, class: "btn btn-primary" %>
-<% end %>
+<%= render "shoes/form_partial" %>
