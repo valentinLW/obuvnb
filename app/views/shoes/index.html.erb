@@ -1,16 +1,24 @@
 <h1>OBUVnB</h1>
-<h2>Flashy shoes for rent.</h2>
-<%= link_to 'Home', root_path %>
 
-<div class="flexbox">
-  <% @shoes.each do |shoe| %>
-      <div class="cards">
-      <%= link_to shoe_path(shoe), class: "text-decoration-none" do %>
-        <div class="card-category" style="background-image: url(<%=cl_image_path shoe.image1.key%>);height:300px;width:450px; background-size:cover">
-        <br><%= shoe.model %> <%= shoe.price %> €
+<h2>Flashy shoes for rent.</h2>
+<div class="shoe-grid">
+  <% shoes = @shoes.to_a %>
+  <% count = 0 %>
+  <% while shoes.count > 0 %>
+    <% snum = count.even? ? 4 : 5 %>
+    <% size = count.even? ? "tbig" : "tsmall" %>
+    <div class="shoe-row-<%= size %>">
+    <% line = shoes.shift(snum) %>
+      <% line.each do |shoe| %>
+        <%= link_to shoe_path(shoe), class: "text-decoration-none" do %>
+        <div class="shoe-thumbnail <%= size %>">
+          <%= cl_image_tag shoe.user.profile_picture.key, class:"avatar" %>
+          <%= cl_image_tag shoe.image1.key, class:"shoe-image" %>
         </div>
-      </div>
+        <% end %>
      <% end %>
+    </div>
+    <% count += 1 %>
   <% end %>
 </div>
 <%= link_to 'Add a new shoe', new_shoe_path %>
