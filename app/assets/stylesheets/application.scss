@@ -10,13 +10,10 @@
 
 // Your CSS partials
 @import "components/index";
+@import "components/thumbnail";
 @import "pages/index";
 
-<<<<<<< HEAD
 .main-content {
   margin-right: 8%;
-  padding: 120px 10px;
+  padding: 120px 0;
 }
-=======
-@import "components/thumbnail"
->>>>>>> 38296697310b16fb3093952bd808754fa7bd7c13
