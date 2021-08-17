@@ -5,10 +5,11 @@
   <% @shoes.each do |shoe| %>
       <div class="cards">
       <%= link_to shoe_path(shoe), class: "text-decoration-none" do %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path shoe.image1.key %>)">
-        <%= shoe.model %> <%= shoe.price %> €
+        <div class="card-category" style="background-image: url(<%=cl_image_path shoe.image1.key%>);height=200px; background-size:fit">
+        <br><%= shoe.model %> <%= shoe.price %> €
         </div>
       </div>
      <% end %>
   <% end %>
 </div>
+<%= link_to 'Add a new shoe', new_shoe_path %>
