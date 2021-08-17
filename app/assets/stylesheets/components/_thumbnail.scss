@@ -1,0 +1,37 @@
+.shoe-row-tbig, .shoe-row-tsmall {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.shoe-thumbnail {
+  position: relative;
+  margin-right: 3em;
+  .shoe-image {
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+    border: 0.3em solid white;
+    box-shadow: 10px -10px  rgba(0,0,0,0.6);
+  }
+}
+
+.avatar {
+    width: 4em;
+    height: 4em;
+    border-radius: 50%;
+    background-color: grey;
+    position: absolute;
+    z-index: 5;
+    right: -1em;
+    top: 6.5em;
+}
+
+.tbig{
+  font-size: 15px;
+}
+
+.tsmall {
+  font-size: 10px;
+}
