@@ -1,9 +1,8 @@
 <!-- Navbar -->
 <div class="navbar">
-  <a href="#"><%= image_tag ("/assets/icon.png") %></a>
-  <a href="#"><%= image_tag ("/assets/icon.png") %></a>
-  <a href="#"><%= image_tag ("/assets/icon.png") %></a>
-  <a href="#"><%= image_tag ("/assets/icon.png") %></a>
-  <a href="#"><%= image_tag ("/assets/icon.png") %></a>
-  <a href="#"><%= image_tag ("/assets/icon.png") %></a>
+  <%= link_to root_path do %><%= cl_image_tag( current_user.profile_picture.key ) unless current_user == nil  %><% end %>
+  <%= link_to new_shoe_path do %><%= cl_image_tag( Shoe.fifth.image1.key ) %><% end %>
+  <%= link_to shoes_path do %><%= cl_image_tag( Shoe.first.image1.key ) %><% end %>
+  <%= link_to new_shoe_path do %><%= cl_image_tag( Shoe.last.image1.key ) %><% end %>
+  <%= link_to about_path do %><%= cl_image_tag( Shoe.second.image1.key ) %><% end %>
 </div>
