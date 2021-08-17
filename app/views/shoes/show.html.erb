@@ -14,7 +14,8 @@
     <h3>Location: <%= @shoe.address %></h3>
     <h4>Price:<%= @shoe.price %> €</h4>
     <h4>Size: <%= @shoe.size %> </h4>
-    <p>User: <%= @shoe.user.email %></p>
+    <%= cl_image_tag( @shoe.user.profile_picture.key, height: 300, width: 200, crop: :fill) if @shoe.image1.attached? %>
+    <p>User: <%= @shoe.user.first_name %> <%= @shoe.user.last_name %></p>
   </div>
 
   <%= link_to 'Back to all the shoes', shoes_path %>
