@@ -1,0 +1,14 @@
+<h1>OBUVnB</h1>
+<h2><%= current_user.first_name %> <%= current_user.last_name %> shoes's</h2>
+<div>
+  <% current_user.shoes.each do |shoe| %>
+      <div class="cards">
+      <%= link_to shoe_path(shoe), class: "text-decoration-none" do %>
+        <div class="card-category" style="background-image: url(<%=cl_image_path shoe.image1.key%>);height:300px;width:450px; background-size:cover">
+        <br><%= shoe.model %> <%= shoe.price %> €
+        </div>
+      </div>
+     <% end %>
+  <% end %>
+</div>
+<%= link_to 'Add a new shoe', new_shoe_path %>
