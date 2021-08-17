@@ -5,10 +5,20 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.create(booking_params)
+    @booking = Booking.new(booking_params)
+    @shoe = Shoe.find(params[:shoe_id])
+    @booking.shoe = @shoe
+    @booking.total_price = 30
+    @booking.user = current_user
+    if @booking.save
+      redirect_to booking_path(@booking)
+    else
+      render :new
+    end
   end
 
   def show
+
   end
 
   private
