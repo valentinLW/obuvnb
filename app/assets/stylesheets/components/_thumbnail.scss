@@ -5,12 +5,18 @@
 .shoe-thumbnail {
   position: relative;
   margin-right: 3em;
+  transition: all 0.5s ease-in-out;
   img {
     width: 10em;
     height: 10em;
     border-radius: 50%;
     border: 0.3em solid lightgrey;
   }
+}
+
+.shoe-thumbnail:hover {
+  font-size: 40px;
+  z-index: 10;
 }
 
 .avatar {
