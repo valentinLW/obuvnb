@@ -1,8 +1,8 @@
 <!-- Navbar -->
 <div class="navbar">
-  <%= link_to root_path do %><%= cl_image_tag( current_user.profile_picture.key ) unless current_user == nil  %><% end %>
-  <%= link_to new_shoe_path do %><%= cl_image_tag( Shoe.fifth.image1.key ) %><% end %>
-  <%= link_to shoes_path do %><%= cl_image_tag( Shoe.first.image1.key ) %><% end %>
-  <%= link_to new_shoe_path do %><%= cl_image_tag( Shoe.last.image1.key ) %><% end %>
-  <%= link_to about_path do %><%= cl_image_tag( Shoe.second.image1.key ) %><% end %>
+  <div><%= link_to profile_path do %><%= cl_image_tag( current_user.profile_picture.key ) unless current_user == nil  %><p>PROFILE</p><% end %></div>
+  <%= link_to shoes_path do %><%= cl_image_tag( Shoe.first.image1.key ) %><p>ALLshoes</p><% end %>
+  <%= link_to new_shoe_path do %><%= cl_image_tag( Shoe.fifth.image1.key ) %><p>ADDshoes</p><% end %>
+  <%= link_to new_shoe_path do %><%= cl_image_tag( Shoe.last.image1.key ) %><p>Bookings</p><% end %>
+  <%= link_to about_path do %><%= cl_image_tag( Shoe.second.image1.key ) %><p>ABOUT</p><% end %>
 </div>
