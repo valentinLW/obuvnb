@@ -5,6 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_one_attached :profile_picture
-
+  has_many :shoes
   validates :profile_picture, presence: true
 end
