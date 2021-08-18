@@ -1,0 +1,20 @@
+
+<%= cl_image_tag @booking.shoe.image1.key, class:'w-50' %>
+
+<ul>
+  <li> Model: <%= @booking.shoe.model %></li>
+  <li> Size: <%= @booking.shoe.size %></li>
+  <li> Daily price for shoe: €<%= @booking.shoe.price %>
+  <li> Description: <%= @booking.shoe.description %>
+  <li> Owner: <%= @booking.shoe.user.email %>
+</ul>
+
+Booking details -------
+
+<ul>
+  <li> Total price: €<%= @booking.total_price %>
+  <li> Booking time: from <%= @booking.pick_up_date %> to: <%= @booking.return_date %>
+</ul>
+
+
+<%= link_to 'All shoes', shoes_path %>
