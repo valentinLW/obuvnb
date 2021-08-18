@@ -2,16 +2,16 @@
     <div class="row">
     <div class="col-2">
       <%= cl_image_tag( @shoe.user.profile_picture.key, height: 100, width: 100, crop: :fill, class: "round") %>
-      <p><%= @shoe.user.first_name %> <%= @shoe.user.last_name %></p>
+      <p class="purpletext"><%= @shoe.user.first_name %> <%= @shoe.user.last_name %></p>
     </div>
       <div class="shoe-thumbnail thuge col-5 pb-3">
         <%= cl_image_tag( @shoe.image1.key, height: 300, width: 300, crop: :fill, class: "shoe-image") %>
       </div>
       <div class="pt-5 col-5">
-      <h2><%= @shoe.model %></h2>
-      <p>size: <%= @shoe.size == @shoe.size.to_i ? @shoe.size.to_i : @shoe.size %></p>
-      <p>price per day: <%= @shoe.price %>€</p>
-      <p><%= @shoe.description %></p>
+      <h2 class="purpletitle"><%= @shoe.model %></h2>
+      <p class="purpletext">size: <%= @shoe.size == @shoe.size.to_i ? @shoe.size.to_i : @shoe.size %></p>
+      <p class="purpletext">price per day: <%= @shoe.price %>€</p>
+      <p class="purpletext"><%= @shoe.description %></p>
   </div>
     </div>
     <div class="row">

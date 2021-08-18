@@ -43,13 +43,15 @@
   border: 2px solid #af6bd6;
 }
 
-.header .navbar a p {
-  margin-top: -18px;
-  margin-left: -22px;
+.header .navbar a p, .purpletext {
   color: #29110e;
   text-shadow: 1px 1px #BBBDF6;
   font-weight: 600;
   z-index: 5;
+}
+.header .navbar a p {
+  margin-top: -18px;
+  margin-left: -22px;
 }
 
 .header .navbar a:hover p {
