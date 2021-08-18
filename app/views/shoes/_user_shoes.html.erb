@@ -1,14 +1,22 @@
-<h1>OBUVnB</h1>
-<h2><%= current_user.first_name %> <%= current_user.last_name %> shoes's</h2>
-<div>
-  <% current_user.shoes.each do |shoe| %>
-      <div class="cards">
-      <%= link_to shoe_path(shoe), class: "text-decoration-none" do %>
-        <div class="card-category" style="background-image: url(<%=cl_image_path shoe.image1.key%>);height:300px;width:450px; background-size:cover">
-        <br><%= shoe.model %> <%= shoe.price %> €
+<br>
+
+<div class="shoe-grid">
+  <% shoes = current_user.shoes.to_a %>
+  <% count = 0 %>
+  <% while shoes.count > 0 %>
+    <% snum = count.even? ? 4 : 5 %>
+    <% size = "tbig" %>
+    <div class="shoe-row-<%= size %>">
+    <% line = shoes.shift(snum) %>
+      <% line.each do |shoe| %>
+        <%= link_to shoe_path(shoe), class: "text-decoration-none" do %>
+        <div class="shoe-thumbnail-profile <%= size %>">
+          <p class="model"><%= shoe.model %></p>
+          <%= cl_image_tag shoe.image1.key, class:"shoe-image-profile" %>
         </div>
-      </div>
+        <% end %>
      <% end %>
+    </div>
+    <% count += 1 %>
   <% end %>
 </div>
-<%= link_to 'Add a new shoe', new_shoe_path %>

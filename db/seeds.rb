@@ -9,8 +9,8 @@ user = User.new(first_name: 'NES',
         password_confirmation: '123456',
         description: 'Lovin shoes since 1979.')
 user.profile_picture.attach(io: file, filename: 'profile_picture.png', content_type: 'image/png')
-puts "gchvjklöjhgfjkljlhvm"
 user.save!
+
 file = URI.open('https://images.stockx.com/images/Air-Jordan-1-Low-fragment-design-x-Travis-Scott.jpg?fit=clip&bg=FFFFFF&auto=compress&dpr=2&trim=color&updated_at=1626978285&fm=webp&ixlib=react-9.1.5&q=90&w=1140&h=500')
 user = User.new(first_name: 'Jordan',
         last_name: "Michael",
@@ -20,6 +20,7 @@ user = User.new(first_name: 'Jordan',
         description: 'Basketball bitches.')
 user.profile_picture.attach(io: file, filename: 'profile_picture.png', content_type: 'image/png')
 user.save!
+
 file = URI.open('https://thispersondoesnotexist.com/image')
 user = User.new(first_name: 'a',
         last_name: "a",
@@ -29,6 +30,7 @@ user = User.new(first_name: 'a',
         description: 'Admin Bitches.')
 user.profile_picture.attach(io: file, filename: 'profile_picture.png', content_type: 'image/png')
 user.save!
+
 file = URI.open('https://images.unsplash.com/photo-1482424917728-d82d29662023?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=862&q=80')
 user = User.new(first_name: 'Jesus',
         last_name: "Fuckin Christ",
@@ -39,7 +41,6 @@ user = User.new(first_name: 'Jesus',
 user.profile_picture.attach(io: file, filename: 'profile_picture.png', content_type: 'image/png')
 user.save!
 
-puts User.all
 file = URI.open('https://images.stockx.com/images/air-jordan-1-retro-high-og-pollen-ps.jpg?fit=clip&bg=FFFFFF&auto=compress&dpr=2&trim=color&updated_at=1627894897&fm=webp&ixlib=react-9.1.5&q=90&w=400&h=500')
   shoe = Shoe.create(
     model: "Nike Jordan Retro High Pollen",

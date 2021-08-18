@@ -13,10 +13,20 @@
 @import "components/thumbnail";
 @import "pages/index";
 @import "components/buttons";
+@import "components/infobox";
+@import "components/bookingcontainer";
 
 .main-content {
   margin-right: 8%;
   padding: 120px 0;
 }
+.fullwidth {
+  width: 100%;
+}
+.extramargin {
+  width: auto;
+  margin-right: 120px;
+}
+@import "components/thumbnail";
 @import "components/thumbnail";
 @import "components/helper";

@@ -1,7 +1,9 @@
 .flexbox {
   position: absolute;
   display: flex !important;
+  align-content: center;
 }
+
 
 #profile {
   position: fixed;
@@ -9,7 +11,51 @@
   z-index: 5;
 }
 
+.description-box {
+  overflow-y:auto;
+  width: 400px;
+  height: 200px;
+  border: 2px solid #470d69;
+  border-radius: 3px;
+  text-align: justify;
+  font-weight: 500;
+  color: #470d69;
+}
+
+.user-profile {
+  width: 400px;
+  text-align: center;
+  font-weight: 700;
+  color: #470d69;
+  text-shadow: 1px 1px white;
+  border: 2px solid #470d69;
+  border-radius: 3px;
+  padding: 10px;
+  margin-top: 10px;
+
+  p {
+    font-size: large;
+  }
+
+  #user_name {
+    font-size: 35px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.user-profile img {
+  object-fit: cover;
+  width: 18em;
+  height: 18em;
+  border-radius: 50%;
+  border: 0.3em solid white;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+}
+
 #shoes {
   position: sticky;
-  margin-left: 500px;
+  margin-left: 380px;
 }
