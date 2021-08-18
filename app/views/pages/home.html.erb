@@ -5,82 +5,20 @@
 
   <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
-
-      <div class="carousel-item active">
-        <div class="row">
-          <div class="column">
-            <div class="card">
-              <%= image_tag ("/assets/card_icon.png") %>
-            </div>
-          </div>
-          <div class="column">
-            <div class="card">
-              <%= image_tag ("/assets/card_icon.png") %>
-            </div>
-          </div>
-          <div class="column">
-            <div class="card">
-              <%= image_tag ("/assets/card_icon.png") %>
-            </div>
-          </div>
-          <div class="column">
-            <div class="card">
-              <%= image_tag ("/assets/card_icon.png") %>
-            </div>
+      <% @shoes.each do |shoe| %>
+        <div class="carousel-item active">
+          <div class="row">
+            <div class="column">
+              <div class="card">
+                <%= link_to shoe_path(shoe), class: "text-decoration-none" do %>
+                <div class="shoe-thumbnail tbig">
+                <%= cl_image_tag shoe.user.profile_picture.key, class:"avatar" %>
+                <%= cl_image_tag shoe.image1.key, class:"shoe-image" %>
+              </div>
+            <% end %>
           </div>
         </div>
-      </div>
-
-      <div class="carousel-item">
-        <div class="row">
-          <div class="column">
-            <div class="card">
-              <%= image_tag ("/assets/card_icon.png") %>
-            </div>
-          </div>
-          <div class="column">
-            <div class="card">
-              <%= image_tag ("/assets/card_icon.png") %>
-            </div>
-          </div>
-          <div class="column">
-            <div class="card">
-              <%= image_tag ("/assets/card_icon.png") %>
-            </div>
-          </div>
-          <div class="column">
-            <div class="card">
-              <%= image_tag ("/assets/card_icon.png") %>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="carousel-item">
-        <div class="row">
-          <div class="column">
-            <div class="card">
-              <%= image_tag ("/assets/card_icon.png") %>
-            </div>
-          </div>
-          <div class="column">
-            <div class="card">
-              <%= image_tag ("/assets/card_icon.png") %>
-            </div>
-          </div>
-          <div class="column">
-            <div class="card">
-              <%= image_tag ("/assets/card_icon.png") %>
-            </div>
-          </div>
-          <div class="column">
-            <div class="card">
-              <%= image_tag ("/assets/card_icon.png") %>
-            </div>
-          </div>
-        </div>
-      </div>
-
+      <% end %>
     </div>
   </div>
 
