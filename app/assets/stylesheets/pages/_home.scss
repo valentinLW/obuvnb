@@ -18,11 +18,15 @@
     margin-bottom: 20px;
   }
 }
+.carousel {
+  top: 100px;
+}
+
 .card {
   padding: 16px;
   text-align: center;
   border: 0;
-  background-color: #f4f4f4;
+  background-color: #fff;
 }
 .row .column .card img {
   border-radius: 50%;
