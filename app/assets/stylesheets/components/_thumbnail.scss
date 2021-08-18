@@ -7,7 +7,6 @@
 
 .shoe-thumbnail {
   position: relative;
-  margin-right: 3em;
   .shoe-image {
     object-fit: cover;
     width: 10em;
@@ -42,8 +41,14 @@
     z-index: 5;
     right: -1em;
     top: 6.5em;
+    object-fit: cover;
 }
 
+.thuge {
+  font-size: 30px;
+}
+
+.tbig {
   .model {
     font-weight: 700;
     color: #470d69;
@@ -57,11 +62,12 @@
     left: 9em;
     top: 3.5em;
   }
+}
 
 .tbig{
-  font-size: 15px;
+  font-size: 20px;
 }
 
 .tsmall {
-  font-size: 10px;
+  font-size: 15px;
 }
