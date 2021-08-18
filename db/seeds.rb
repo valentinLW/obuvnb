@@ -1,54 +1,53 @@
 require 'faker'
 require "open-uri"
 
-file = URI.open('https://images.unsplash.com/photo-1560858001-2a568c6ea1d7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80')
-user = User.new(first_name: 'NES',
-        last_name: "Madagascar",
-        email: 'nes@madagascar.com',
+file = URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1626782776/qxjbfihftnyi9phgnb3l.jpg')
+user = User.new(first_name: 'Marina',
+        last_name: "Miranda",
+        email: 'marina@obuvnb.com',
         password: '123456',
         password_confirmation: '123456',
-        description: 'Lovin shoes since 1979.')
-user.profile_picture.attach(io: file, filename: 'profile_picture.png', content_type: 'image/png')
-puts "gchvjklöjhgfjkljlhvm"
-user.save!
-file = URI.open('https://images.stockx.com/images/Air-Jordan-1-Low-fragment-design-x-Travis-Scott.jpg?fit=clip&bg=FFFFFF&auto=compress&dpr=2&trim=color&updated_at=1626978285&fm=webp&ixlib=react-9.1.5&q=90&w=1140&h=500')
-user = User.new(first_name: 'Jordan',
-        last_name: "Michael",
-        email: 'michaeljordan@jordan.com',
-        password: '123456',
-        password_confirmation: '123456',
-        description: 'Basketball bitches.')
-user.profile_picture.attach(io: file, filename: 'profile_picture.png', content_type: 'image/png')
-user.save!
-file = URI.open('https://thispersondoesnotexist.com/image')
-user = User.new(first_name: 'a',
-        last_name: "a",
-        email: 'a@a.a',
-        password: '123456',
-        password_confirmation: '123456',
-        description: 'Admin Bitches.')
-user.profile_picture.attach(io: file, filename: 'profile_picture.png', content_type: 'image/png')
-user.save!
-file = URI.open('https://images.unsplash.com/photo-1482424917728-d82d29662023?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=862&q=80')
-user = User.new(first_name: 'Jesus',
-        last_name: "Fuckin Christ",
-        email: 'jesus@christmas.com',
-        password: '123456',
-        password_confirmation: '123456',
-        description: 'Never wore shoes.')
+        description: 'My name is Marina, I am 25 years old, native brazilian who moved to Germany at a young age. I studied fashion design until 2020, but dropped it with an immense urge to search for a branch that would suit me better. After a long self-discovery phase (that actually never ends) I now found the courage to jump into the programming-world, since I’ve always been interested in IT.')
 user.profile_picture.attach(io: file, filename: 'profile_picture.png', content_type: 'image/png')
 user.save!
 
-puts User.all
+file = URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1626805000/yppphiokhswqo7b4ar1b.jpg')
+user = User.new(first_name: 'Valentin',
+        last_name: "Hobusch",
+        email: 'valentin@obuvnb.com',
+        password: '123456',
+        password_confirmation: '123456',
+        description: 'Studied Computer science at TU Berlin for a few semesters: Too much science, not enough computers. Looking to find a job in Web Development after Le Wagon.')
+user.profile_picture.attach(io: file, filename: 'profile_picture.png', content_type: 'image/png')
+user.save!
+
+file = URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1625037044/xyvhwprahklgd6nke6rd.jpg')
+user = User.new(first_name: 'Stanislaw',
+        last_name: "Novikow",
+        email: 'stan@obuvnb.com',
+        password: '123456',
+        password_confirmation: '123456',
+        description: "I already have some basic knowledge in Webdev. I'm glad to join this course to extend my existing skills and to get new ones. I'm looking forward to any new challenges!.")
+user.profile_picture.attach(io: file, filename: 'profile_picture.png', content_type: 'image/png')
+user.save!
+
+file = URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1627363623/dxcvc5uqkimpnpkhgswe.jpg')
+user = User.new(first_name: 'Ruy',
+        last_name: "Schneider",
+        email: 'ruy@obuvnb.com',
+        password: '123456',
+        password_confirmation: '123456',
+        description: "Studied Philosophy, used to work in Bars. I'm interested in how thinking works, and believe that coding will enrich my perspective around it. One day I want to code my own chess AI.")
+user.profile_picture.attach(io: file, filename: 'profile_picture.png', content_type: 'image/png')
+user.save!
+
 file = URI.open('https://images.stockx.com/images/air-jordan-1-retro-high-og-pollen-ps.jpg?fit=clip&bg=FFFFFF&auto=compress&dpr=2&trim=color&updated_at=1627894897&fm=webp&ixlib=react-9.1.5&q=90&w=400&h=500')
   shoe = Shoe.create(
     model: "Nike Jordan Retro High Pollen",
     price: rand(23..999),
     size: rand(19..49),
     address: "#{Faker::Address.street_address} #{Faker::Address.city}",
-    description: 'In a simple two-tone format, the upper of the Air Jordan 1 High Pollen is constructed of black tumbled leather with Pollen Yellow overlays and Swooshes. Matching woven tongue tags and a Jordan Wings logo on the collar add authentic 1980s detailing.
-
-The Air Jordan 1 High Pollen released in August of 2021 and retailed for $170.',
+    description: 'In a simple two-tone format, the upper of the Air Jordan 1 High Pollen is constructed of black tumbled leather with Pollen Yellow overlays and Swooshes. Matching woven tongue tags and a Jordan Wings logo on the collar add authentic 1980s detailing. The Air Jordan 1 High Pollen released in August of 2021 and retailed for $170.',
     user_id: User.all.sample.id
   )
 shoe.image1.attach(io: file, filename: 'image1', content_type: 'image/png')
@@ -59,15 +58,10 @@ file = URI.open('https://images.stockx.com/360/Nike-Dunk-Low-SE-Multi-Camo/Image
     price: rand(23..999),
     size: rand(19..49),
     address: "#{Faker::Address.street_address} #{Faker::Address.city}",
-    description: 'Boasting clashing camouflage patterns, the Nike Dunk Low Sail Multi-Camo is a statement piece. The design utilizes a white leather base to prominently display its multi-color camo overlays, which feature five different styles of camo. Green Swooshes and vibrant orange Nike embroidery on the heel tabs add the finishing touches.
-
-The Nike Dunk Low Sail Multi-Camo released in August of 2021 and retailed for $110..
-
-The Air Jordan 1 High Pollen released in August of 2021 and retailed for $170.',
+    description: 'Boasting clashing camouflage patterns, the Nike Dunk Low Sail Multi-Camo is a statement piece. The design utilizes a white leather base to prominently display its multi-color camo overlays, which feature five different styles of camo. Green Swooshes and vibrant orange Nike embroidery on the heel tabs add the finishing touches. The Nike Dunk Low Sail Multi-Camo released in August of 2021 and retailed for $110. The Air Jordan 1 High Pollen released in August of 2021 and retailed for $170.',
     user_id: User.all.sample.id
   )
 shoe.image1.attach(io: file, filename: 'image1', content_type: 'image/png')
-
 
 12.times do
 stockx_photos = %w[
@@ -93,5 +87,4 @@ file = URI.open(stockx_photos.sample)
     user_id: User.all.sample.id
   )
 shoe.image1.attach(io: file, filename: 'image1', content_type: 'image/png')
-
 end
