@@ -2,7 +2,8 @@
 <%= render "pages/navbar_partial" %>
 
 <div class="main-content">
-
+<%
+=begin%>
   <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
       <% @shoes.each do |shoe| %>
@@ -21,9 +22,32 @@
       <% end %>
     </div>
   </div>
+<%
+=end%>
+<div class="d-flex justify-content-between">
+  <% shoe = @shoes[0] %>
+  <%= link_to shoe_path(shoe), class: "text-decoration-none" do %>
+    <div class="shoe-thumbnail tbig">
+      <%= cl_image_tag shoe.user.profile_picture.key, class:"avatar" %>
+      <%= cl_image_tag shoe.image1.key, class:"shoe-image" %>
+    </div>
+  <% end %>
 
+    <% shoe = @shoes[1] %>
+  <%= link_to shoe_path(shoe), class: "text-decoration-none" do %>
+    <div class="shoe-thumbnail tbig">
+      <%= cl_image_tag shoe.user.profile_picture.key, class:"avatar" %>
+      <%= cl_image_tag shoe.image1.key, class:"shoe-image" %>
+    </div>
+  <% end %>
+
+    <% shoe = @shoes[2] %>
+  <%= link_to shoe_path(shoe), class: "text-decoration-none" do %>
+    <div class="shoe-thumbnail tbig">
+      <%= cl_image_tag shoe.user.profile_picture.key, class:"avatar" %>
+      <%= cl_image_tag shoe.image1.key, class:"shoe-image" %>
+    </div>
+  <% end %>
 </div>
-
-<%= render "pages/login" %>
-<%= link_to 'Go check out all the shoes', shoes_path %>
+</div>
 <%= render "pages/footer_partial" %>
