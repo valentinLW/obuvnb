@@ -9,8 +9,8 @@
   <div class='infobox highlighted'>
     <h3> Booking </h3>
     <%= simple_form_for [@shoe, @booking] do |f| %>
-      <%= f.input  :pick_up_date %>
-      <%= f.input  :return_date %>
+      <%= f.input  :pick_up_date, order: [:day, :month, :year] %>
+      <%= f.input  :return_date, order: [:day, :month, :year] %>
       <%= f.button :submit, class: 'btn bookingbtn' %>
     <% end %>
   </div>
