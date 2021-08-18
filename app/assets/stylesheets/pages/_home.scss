@@ -1,1 +1,29 @@
-// Specific CSS for your home-page
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+.row {
+  margin: 0 -5px;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+.card {
+  padding: 16px;
+  text-align: center;
+  border: 0;
+  background-color: #f4f4f4;
+}
+.row .column .card img {
+  border-radius: 50%;
+}
