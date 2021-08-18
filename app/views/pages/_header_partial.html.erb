@@ -1,23 +1,19 @@
 <!-- Header -->
 <div class="header">
-  <%= link_to root_path do %>
-    <%= image_tag ("/assets/logo.png") %>
-  <% end %>
+  <a href="#"><%= image_tag ("/assets/logo.png") %></a>
 
 <div class="navbar">
-  <div><%= link_to profile_path do %><%= cl_image_tag( current_user.profile_picture.key ) unless current_user == nil  %><p>PROFILE</p><% end %><ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+  <div><%= link_to profile_path do %><p class="nav-p">PROFILE</p><% end %><ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
     <li><a class="dropdown-item" href="#">Action</a></li>
     <li><a class="dropdown-item" href="#">Another action</a></li>
     <li><a class="dropdown-item" href="#">Something else here</a></li>
   </ul></div>
   <br>
-  <%= link_to shoes_path do %><%= cl_image_tag( Shoe.first.image1.key ) %><p>ALLshoes</p><% end %>
+  <%= link_to shoes_path do %><p class="nav-p">ALLshoes</p><% end %>
   <br>
-  <%= link_to new_shoe_path do %><%= cl_image_tag( Shoe.fifth.image1.key ) %><p>ADDshoes</p><% end %>
+  <%= link_to new_shoe_path do %><p class="nav-p">ADDshoes</p><% end %>
   <br>
-  <%= link_to new_shoe_path do %><%= cl_image_tag( Shoe.last.image1.key ) %><p>Bookings</p><% end %>
-  <br>
-  <%= link_to about_path do %><%= cl_image_tag( Shoe.second.image1.key ) %><p>ABOUT</p><% end %>
+  <%= link_to about_path do %><p class="nav-p">ABOUT</p><% end %>
 </div>
 
 </div>
