@@ -22,17 +22,17 @@
         <%= cl_image_tag( @shoe.image2.key, height: 300, width: 300, crop: :fill, class: "shoe-image") %>
       </div>
     <% end %>
-    <% if @shoe.image2.attached? %>
+    <% if @shoe.image3.attached? %>
       <div class="shoe-thumbnail tbig">
         <%= cl_image_tag( @shoe.image3.key, height: 300, width: 300, crop: :fill, class: "shoe-image") %>
       </div>
       <% end %>
-      <% if @shoe.image2.attached? %>
+      <% if @shoe.image4.attached? %>
       <div class="shoe-thumbnail tbig">
         <%= cl_image_tag( @shoe.image4.key, height: 300, width: 300, crop: :fill, class: "shoe-image") %>
       </div>
       <% end %>
-      <% if @shoe.image2.attached? %>
+      <% if @shoe.image5.attached? %>
       <div class="shoe-thumbnail tsmall">
         <%= cl_image_tag( @shoe.image5.key, height: 300, width: 300, crop: :fill, class: "shoe-image") %>
       </div>
