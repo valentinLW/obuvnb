@@ -1,0 +1,20 @@
+<div class="shoe-grid">
+  <% shoes = @shoes.to_a %>
+  <% count = 0 %>
+  <% while shoes.count > 0 %>
+    <% snum = count.even? ? 4 : 5 %>
+    <% size = count.even? ? "tbig" : "tsmall" %>
+    <div class="shoe-row-<%= size %>">
+    <% line = shoes.shift(snum) %>
+      <% line.each do |shoe| %>
+        <%= link_to shoe_path(shoe), class: "text-decoration-none" do %>
+        <div class="shoe-thumbnail <%= size %> mr-5">
+          <%= cl_image_tag shoe.user.profile_picture.key, class:"avatar" %>
+          <%= cl_image_tag shoe.image1.key, class:"shoe-image" %>
+        </div>
+        <% end %>
+     <% end %>
+    </div>
+    <% count += 1 %>
+  <% end %>
+</div>

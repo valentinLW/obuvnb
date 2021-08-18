@@ -1,0 +1,73 @@
+.shoe-row-tbig, .shoe-row-tsmall {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.shoe-thumbnail {
+  position: relative;
+  .shoe-image {
+    object-fit: cover;
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+    border: 0.3em solid white;
+    box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+  }
+}
+
+.shoe-thumbnail-profile {
+  position: relative;
+  margin-right: 3em;
+  margin-top: 1em;
+
+  .shoe-image-profile {
+    object-fit: cover;
+    width: 15em;
+    height: 15em;
+    border-radius: 50%;
+    border: 0.3em solid white;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.avatar {
+    width: 4em;
+    height: 4em;
+    border-radius: 50%;
+    background-color: grey;
+    position: absolute;
+    z-index: 5;
+    right: -1em;
+    top: 6.5em;
+    object-fit: cover;
+}
+
+.thuge {
+  font-size: 30px;
+}
+
+.tbig {
+  .model {
+    font-weight: 700;
+    color: #470d69;
+    text-shadow: 1px 1px white;
+    width: 14em;
+    height: 4em;
+    border-radius: 50%;
+    background-color: transparent;
+    position: absolute;
+    z-index: 9;
+    left: 9em;
+    top: 3.5em;
+  }
+}
+
+.tbig{
+  font-size: 20px;
+}
+
+.tsmall {
+  font-size: 15px;
+}

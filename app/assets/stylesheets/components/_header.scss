@@ -1,0 +1,60 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  background-color: #ffffff;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.header a img {
+  height: 80px;
+}
+
+.header .navbar {
+  height: 100%;
+  overflow-x: hidden;
+  padding-top: 8px;
+}
+
+.header .navbar a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.header .navbar a img {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  z-index: 0;
+  border: 2px solid darkgray;
+}
+
+.header .navbar a:hover {
+  opacity: 0.8;
+}
+
+.header .navbar a:hover img {
+  color: #D4D4D4;
+  border: 2px solid #af6bd6;
+}
+
+.header .navbar a p, .purpletext {
+  color: #29110e;
+  text-shadow: 1px 1px #BBBDF6;
+  font-weight: 600;
+  z-index: 5;
+}
+.header .navbar a p {
+  margin-top: -18px;
+  margin-left: -22px;
+}
+
+.header .navbar a:hover p {
+  color: #9323d3;
+  text-shadow: 1px 2px white;
+}
