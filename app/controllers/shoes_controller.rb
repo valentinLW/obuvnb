@@ -1,4 +1,5 @@
 class ShoesController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[index show]
   before_action :set_shoe, only: %i[show edit update]
 
   def new
