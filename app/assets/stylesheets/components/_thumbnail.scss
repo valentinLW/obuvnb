@@ -7,7 +7,7 @@
 
 .shoe-thumbnail {
   position: relative;
-  margin-right: 3em;
+  // margin-right: 3em;
   .shoe-image {
     object-fit: cover;
     width: 10em;
@@ -29,7 +29,11 @@
     top: 6.5em;
 }
 
-.tbig{
+.thuge {
+  font-size: 20px;
+}
+
+.tbig {
   font-size: 15px;
 }
 

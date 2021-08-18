@@ -1,14 +1,34 @@
-<div class="container">
-  <div class="container">
+<div class="mt-5">
     <div class="row">
+    <div class="col-2">
       <%= cl_image_tag( @shoe.user.profile_picture.key, height: 100, width: 100, crop: :fill, class: "round") %>
-      <%= cl_image_tag( @shoe.image1.key, height: 300, width: 300, crop: :fill, class: "round") if @shoe.image1.attached? %>
-      <%= cl_image_tag( @shoe.image2.key, height: 300, width: 300, crop: :fill, class: "round") if @shoe.image2.attached? %>
-      <%= cl_image_tag( @shoe.image3.key, height: 300, width: 300, crop: :fill, class: "round") if @shoe.image3.attached? %>
-      <%= cl_image_tag( @shoe.image4.key, height: 300, width: 300, crop: :fill, class: "round") if @shoe.image4.attached? %>
-      <%= cl_image_tag( @shoe.image5.key, height: 300, width: 300, crop: :fill, class: "round") if @shoe.image5.attached? %>
     </div>
+      <div class="shoe-thumbnail thuge col-5">
+        <%= cl_image_tag( @shoe.image1.key, height: 300, width: 300, crop: :fill, class: "shoe-image") %>
+      </div>
+      <div class="pt-5 col-5">
+      <p ><%= @shoe.model %></p>
+      <p ><%= @shoe.size %></p>
+      <p ><%= @shoe.price %></p>
+      <p ><%= @shoe.description %></p>
   </div>
+    </div>
+    <div class="row">
+    <div class="col-5"></div>
+    <div class="col-7 d-flex">
+      <div class="shoe-thumbnail tbig">
+        <%= cl_image_tag( @shoe.image2.key, height: 300, width: 300, crop: :fill, class: "shoe-image") %>
+      </div>
+      <div class="shoe-thumbnail tbig">
+        <%= cl_image_tag( @shoe.image3.key, height: 300, width: 300, crop: :fill, class: "shoe-image") %>
+      </div>
+      <div class="shoe-thumbnail tbig">
+        <%= cl_image_tag( @shoe.image4.key, height: 300, width: 300, crop: :fill, class: "shoe-image") %>
+      </div>
+      <div class="shoe-thumbnail tsmall">
+        <%= cl_image_tag( @shoe.image5.key, height: 300, width: 300, crop: :fill, class: "shoe-image") %>
+      </div>
+      </div>
+    </div>
   <%= link_to 'Back to all the shoes', shoes_path %>
-  <%= link_to 'Edit your shoes', edit_shoe_path %>
 </div>
