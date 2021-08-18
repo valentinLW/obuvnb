@@ -1,25 +1,19 @@
 <%= render "pages/header_partial" %>
 
-
 <div class='bookingcontainer'>
-  <div class='picdesc'>
-    <div>
-      Owner: <%= @booking.shoe.user.email %>
-      Description: <%= @booking.shoe.description %>
-    </div>
-    <div>
-      <%= cl_image_tag @booking.shoe.image1.key, class:'shoepic' %>
-    </div>
+  <div class='imgcontainer'>
+    <%= cl_image_tag @booking.shoe.user.profile_picture.key, class: 'ownerimg'%>
+    <%= cl_image_tag @booking.shoe.image1.key, class:'shoeimg' %>
+    <%= cl_image_tag current_user.profile_picture.key, class:'userimg' %>
   </div>
   <div class='infobox'>
-    <ul>
-      <li> Model: <%= @booking.shoe.model %></li>
-      <li> Size: <%= @booking.shoe.size %></li>
-      <li> Daily price for shoe: €<%= @booking.shoe.price %>
-      <li> Booking time: from <%= @booking.pick_up_date %> to: <%= @booking.return_date %>
-      <li> Total price: €<%= @booking.total_price %>
-    </ul>
+    <h3> Booked! </h3>
+    <div class='row'><div class="key">Model:</div> <div class='value'><%= @booking.shoe.model %></div></div>
+    <div class='row'><div class="key">Size:</div> <div class='value'><%= @booking.shoe.size %></div></div>
+    <div class='row'><div class="key">Daily price for shoe:</div> <div class='value'>€<%= @booking.shoe.price %></div></div>
+    <div class='row'><div class="key">From:</div><div class='value'><%= @booking.pick_up_date %></div></div>
+    <div class='row'><div class="key">To:</div><div class='value'><%= @booking.return_date %></div></div>
+    <div class='row totalprice'><div class="key">Total price:</div> <div class='value'>€<%= @booking.total_price %></div></div>
+    <div class="disclaimer">Please contact <%= @booking.shoe.user.email %> for any questions.</div>
   </div>
 </div>
-
-<%= link_to 'All shoes', shoes_path %>
