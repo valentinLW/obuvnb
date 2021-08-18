@@ -1,8 +1,15 @@
+<%= render "pages/header_partial" %>
+
+
 <div class='bookingcontainer'>
   <div class='picdesc'>
-    <%= cl_image_tag @booking.shoe.image1.key, class:'w-50' %>
-    Owner: <%= @booking.shoe.user.email %>
-    Description: <%= @booking.shoe.description %>
+    <div>
+      Owner: <%= @booking.shoe.user.email %>
+      Description: <%= @booking.shoe.description %>
+    </div>
+    <div>
+      <%= cl_image_tag @booking.shoe.image1.key, class:'shoepic' %>
+    </div>
   </div>
   <div class='infobox'>
     <ul>

@@ -1,23 +1,14 @@
 <div class="container">
   <div class="container">
-  <div>
-    <%= cl_image_tag( @shoe.image1.key, height: 300, width: 400, crop: :fill) if @shoe.image1.attached? %>
-    <%= cl_image_tag( @shoe.image2.key, height: 300, width: 400, crop: :fill) if @shoe.image2.attached? %>
-    <%= cl_image_tag( @shoe.image3.key, height: 300, width: 400, crop: :fill) if @shoe.image3.attached? %>
-    <%= cl_image_tag( @shoe.image4.key, height: 300, width: 400, crop: :fill) if @shoe.image4.attached? %>
-    <%= cl_image_tag( @shoe.image5.key, height: 300, width: 400, crop: :fill) if @shoe.image5.attached? %>
+    <div class="row">
+      <%= cl_image_tag( @shoe.user.profile_picture.key, height: 100, width: 100, crop: :fill, class: "round") %>
+      <%= cl_image_tag( @shoe.image1.key, height: 300, width: 300, crop: :fill, class: "round") if @shoe.image1.attached? %>
+      <%= cl_image_tag( @shoe.image2.key, height: 300, width: 300, crop: :fill, class: "round") if @shoe.image2.attached? %>
+      <%= cl_image_tag( @shoe.image3.key, height: 300, width: 300, crop: :fill, class: "round") if @shoe.image3.attached? %>
+      <%= cl_image_tag( @shoe.image4.key, height: 300, width: 300, crop: :fill, class: "round") if @shoe.image4.attached? %>
+      <%= cl_image_tag( @shoe.image5.key, height: 300, width: 300, crop: :fill, class: "round") if @shoe.image5.attached? %>
+    </div>
   </div>
-
-      <div class="card-product-infos" alt="some shoe">
-    <h1><%= @shoe.model %> </h1>
-    <h2><%= @shoe.description %></h2>
-    <h3>Location: <%= @shoe.address %></h3>
-    <h4>Price:<%= @shoe.price %> €</h4>
-    <h4>Size: <%= @shoe.size %> </h4>
-    <%= cl_image_tag( @shoe.user.profile_picture.key, height: 300, width: 200, crop: :fill) if @shoe.image1.attached? %>
-    <p>User: <%= @shoe.user.first_name %> <%= @shoe.user.last_name %></p>
-  </div>
-
   <%= link_to 'Back to all the shoes', shoes_path %>
   <%= link_to 'Edit your shoes', edit_shoe_path %>
 </div>

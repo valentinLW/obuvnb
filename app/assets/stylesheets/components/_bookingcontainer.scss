@@ -1,9 +1,15 @@
 .bookingcontainer {
-  display: flex;
-  flex-direction: row;
+  display: inline-flex;
   justify-content: space-between;
+  margin-top: 20%;
 }
 
 .picdesc {
   flex: 1;
+}
+
+.shoepic {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
 }
