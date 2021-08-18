@@ -8,6 +8,7 @@
   top: 0;
   width: 100%;
   z-index: 100;
+  border-bottom: 1px solid grey;
 }
 
 .header a img {
@@ -57,4 +58,10 @@
 .header .navbar a:hover p {
   color: #9323d3;
   text-shadow: 1px 2px white;
+}
+
+.nav-p {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 40px;
 }
