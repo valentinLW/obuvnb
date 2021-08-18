@@ -1,5 +1,17 @@
-<%= simple_form_for [@shoe, @booking] do |f| %>
-  <%= f.input  :pick_up_date %>
-  <%= f.input  :return_date %>
-  <%= f.button :submit, class: 'btn btn-primary' %>
-<% end %>
+<%= render "pages/header_partial" %>
+
+<div class='bookingcontainer'>
+  <div class='imgcontainer'>
+    <%= cl_image_tag @shoe.user.profile_picture.key, class: 'ownerimg'%>
+    <%= cl_image_tag @shoe.image1.key, class:'shoeimg' %>
+    <%= cl_image_tag current_user.profile_picture.key, class:'userimg' %>
+  </div>
+  <div class='infobox highlighted'>
+    <h3> Booking </h3>
+    <%= simple_form_for [@shoe, @booking] do |f| %>
+      <%= f.input  :pick_up_date %>
+      <%= f.input  :return_date %>
+      <%= f.button :submit, class: 'btn bookingbtn' %>
+    <% end %>
+  </div>
+</div>
