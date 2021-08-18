@@ -1,6 +1,8 @@
 <!-- Header -->
 <div class="header">
-  <a href="#"><%= image_tag ("/assets/logo.png") %></a>
+<%= link_to root_path do %>
+ <%= image_tag ("/assets/logo.png") %>
+  <% end %>
 
 <div class="navbar">
   <div><%= link_to profile_path do %><p class="nav-p">PROFILE</p><% end %><ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
