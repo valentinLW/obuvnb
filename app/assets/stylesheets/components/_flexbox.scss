@@ -1,13 +1,13 @@
 .flexbox {
   position: absolute;
-  display: flex !important;
+  display: flex;
   align-content: center;
 }
 
 
 #profile {
   position: fixed;
-  margin-right: 100px;
+  margin-right: 150px;
   z-index: 5;
 }
 
@@ -57,5 +57,5 @@
 
 #shoes {
   position: sticky;
-  margin-left: 380px;
+  margin-left: 390px;
 }
