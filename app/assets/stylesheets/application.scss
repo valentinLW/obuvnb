@@ -7,6 +7,7 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "flatpickr/dist/flatpickr";
 
 // Your CSS partials
 @import "components/index";
@@ -15,9 +16,9 @@
 @import "components/buttons";
 @import "components/infobox";
 @import "components/bookingcontainer";
+@import "components/bookingindex";
 
 .main-content {
-  margin-right: 8%;
   padding: 120px 0;
 }
 .fullwidth {
