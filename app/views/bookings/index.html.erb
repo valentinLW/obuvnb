@@ -6,7 +6,7 @@
       <% @bookings.each do |booking| %>
       <ul>
         <%= link_to booking_path(booking) do %>
-        <%= cl_image_tag booking.shoe.image1.key, class:'bookingimg' %>  <%= booking.shoe.model %>
+        <%= cl_image_tag booking.shoe.images[0].key, class:'bookingimg' %>  <%= booking.shoe.model %>
         <% end %>
       </ul>
       <% end %>
@@ -17,7 +17,7 @@
       <% @booked.each do |booking| %>
         <div class='eachbooking'>
           <div class='eachimg'>
-            <%= cl_image_tag booking.shoe.image1.key, class:'bookedimg' %>
+            <%= cl_image_tag booking.shoe.images[0].key, class:'bookedimg' %>
           </div>
           <div class='eachdescription'>
             <p>Model: <%= booking.shoe.model %></p>
