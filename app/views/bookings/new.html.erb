@@ -6,8 +6,6 @@
     <%= cl_image_tag @shoe.images[0].key, class:'shoeimg' %>
     <%= cl_image_tag current_user.profile_picture.key, class:'userimg' %>
   </div>
-  <%
-=begin%>
  <div class='infobox highlighted'>
     <h3> Booking </h3>
     <%= simple_form_for [@shoe, @booking] do |f| %>
@@ -17,8 +15,6 @@
     <% end %>
   </div>
 </div>
-<%
-=end%>
 
 <div id='shoe-booking-dates' class= 'infobox highlighted' data-unavailable="<%= @shoe.unavailable_dates.to_json %>">
     <h3> Book this shoes: </h3>
