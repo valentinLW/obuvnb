@@ -29,7 +29,7 @@
   <%= link_to shoe_path(shoe), class: "text-decoration-none" do %>
     <div class="shoe-thumbnail tbig">
       <%= cl_image_tag shoe.user.profile_picture.key, class:"avatar" %>
-      <%= cl_image_tag shoe.image1.key, class:"shoe-image" %>
+      <%= cl_image_tag shoe.images[0].key, class:"shoe-image" %>
     </div>
   <% end %>
 
@@ -37,7 +37,7 @@
   <%= link_to shoe_path(shoe), class: "text-decoration-none" do %>
     <div class="shoe-thumbnail tbig">
       <%= cl_image_tag shoe.user.profile_picture.key, class:"avatar" %>
-      <%= cl_image_tag shoe.image1.key, class:"shoe-image" %>
+      <%= cl_image_tag shoe.images[0].key, class:"shoe-image" %>
     </div>
   <% end %>
 
@@ -45,7 +45,7 @@
   <%= link_to shoe_path(shoe), class: "text-decoration-none" do %>
     <div class="shoe-thumbnail tbig">
       <%= cl_image_tag shoe.user.profile_picture.key, class:"avatar" %>
-      <%= cl_image_tag shoe.image1.key, class:"shoe-image" %>
+      <%= cl_image_tag shoe.images[0].key, class:"shoe-image" %>
     </div>
   <% end %>
 </div>
