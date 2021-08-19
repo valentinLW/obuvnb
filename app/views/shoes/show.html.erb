@@ -5,7 +5,7 @@
       <p class="purpletext"><%= @shoe.user.first_name %> <%= @shoe.user.last_name %></p>
     </div>
       <div class="shoe-thumbnail thuge col-5 pb-3">
-        <%# <%= cl_image_tag( @shoe.image1.key, height: 300, width: 300, crop: :fill, class: "shoe-image") %> %>
+        <%= cl_image_tag( @shoe.images[0].key, height: 300, width: 300, crop: :fill, class: "shoe-image") %>
       </div>
       <div class="pt-5 col-5">
       <h2 class="purpletitle"><%= @shoe.model %></h2>
@@ -17,7 +17,26 @@
     <div class="row">
     <div class="col-5"></div>
     <div class="col-7 d-flex">
-
+    <% unless @shoe.images[1].nil? %>
+      <div class="shoe-thumbnail tbig">
+        <%= cl_image_tag( @shoe.images[1].key, height: 300, width: 300, crop: :fill, class: "shoe-image") %>
+      </div>
+    <% end %>
+    <% unless @shoe.images[2].nil? %>
+      <div class="shoe-thumbnail tbig">
+        <%= cl_image_tag( @shoe.images[2].key, height: 300, width: 300, crop: :fill, class: "shoe-image") %>
+      </div>
+      <% end %>
+      <% unless @shoe.images[3].nil? %>
+      <div class="shoe-thumbnail tbig">
+        <%= cl_image_tag( @shoe.images[3].key, height: 300, width: 300, crop: :fill, class: "shoe-image") %>
+      </div>
+      <% end %>
+      <% unless @shoe.images[4].nil? %>
+      <div class="shoe-thumbnail tsmall">
+        <%= cl_image_tag( @shoe.images[4].key, height: 300, width: 300, crop: :fill, class: "shoe-image") %>
+      </div>
+      <% end %>
       </div>
     </div>
   <%= link_to 'Rent this shoe',  new_shoe_booking_path(@shoe), class:"btn btn-primary" %>
