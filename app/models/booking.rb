@@ -1,6 +1,7 @@
 class Booking < ApplicationRecord
   belongs_to :shoe
   belongs_to :user
+  enum status: %i[pending accepted rejected]
 
   validates :pick_up_date, :return_date, presence: true
   validate :return_date_after_pick_up_date
