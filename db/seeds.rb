@@ -1,6 +1,7 @@
 require 'faker'
 require "open-uri"
 
+puts "creating users"
 file = URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1626782776/qxjbfihftnyi9phgnb3l.jpg')
 user = User.new(first_name: 'Marina',
         last_name: "Miranda",
@@ -73,7 +74,8 @@ stockx_photos = %w[
   https://images.stockx.com/360/Nike-Dunk-SB-High-Concepts-Stained-Glass/Images/Nike-Dunk-SB-High-Concepts-Stained-Glass/Lv2/img01.jpg?auto=compress&dpr=2&updated_at=1607055048&fit=clip&fm=webp&ixlib=react-9.1.5&q=90&w=400
 ]
 
-5.times do
+15.times do
+  puts "creating shoe"
   file = URI.open(stockx_photos.sample)
   file2 = URI.open(stockx_photos.sample)
   file3 = URI.open(stockx_photos.sample)
