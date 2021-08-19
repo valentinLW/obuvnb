@@ -8,7 +8,7 @@
 .shoe-thumbnail {
   position: relative;
   .shoe-image {
-    object-fit: cover;
+    object-fit: contain;
     width: 10em;
     height: 10em;
     border-radius: 50%;
@@ -23,7 +23,7 @@
   margin-top: 1em;
 
   .shoe-image-profile {
-    object-fit: cover;
+    object-fit: contain;
     width: 15em;
     height: 15em;
     border-radius: 50%;
@@ -61,6 +61,7 @@
     z-index: 9;
     left: 9em;
     top: 3.5em;
+    object-fit: contain;
   }
 }
 
