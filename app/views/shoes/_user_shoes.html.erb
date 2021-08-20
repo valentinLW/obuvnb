@@ -12,7 +12,9 @@
         <%= link_to shoe_path(shoe), class: "text-decoration-none" do %>
         <div class="shoe-thumbnail-profile <%= size %>">
           <p class="model"><%= shoe.model %></p>
+          <% unless shoe.images[0].nil? %>
           <%= cl_image_tag shoe.images[0].key, class:"shoe-image-profile" %>
+          <% end %>
         </div>
         <% end %>
      <% end %>
