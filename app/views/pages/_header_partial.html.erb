@@ -1,38 +1,52 @@
 <!-- Header -->
 <div class="header">
-<%= link_to root_path do %>
- <%= image_tag ("/assets/logo.png") %>
-  <% end %>
 
-<div class="navbar">
-  <div><%= link_to profile_path do %><p class="nav-p">PROFILE</p><% end %><ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-    <li><a class="dropdown-item" href="#">Action</a></li>
-    <li><a class="dropdown-item" href="#">Another action</a></li>
-    <li><a class="dropdown-item" href="#">Something else here</a></li>
-  </ul></div>
-  <br>
-  <%= link_to shoes_path do %><p class="nav-p">ALLshoes</p><% end %>
-  <br>
-  <%= link_to new_shoe_path do %><p class="nav-p">ADDshoes</p><% end %>
-  <br>
-  <%= link_to bookings_path do %><p class="nav-p">bookings</p><% end %>
-  <br>
-  <%= link_to about_path do %><p class="nav-p">ABOUT</p><% end %>
+  <div>
+    <%= link_to root_path do %>
+    <%= image_tag ("/assets/logo.png") %>
+    <% end %>
+  </div>
+
+  <script>
+
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+</script>
+
+
 </div>
 
-</div>
-<%
-=begin%>
 
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-    Dropdown button
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-    <li><a class="dropdown-item" href="#">Action</a></li>
-    <li><a class="dropdown-item" href="#">Another action</a></li>
-    <li><a class="dropdown-item" href="#">Something else here</a></li>
-  </ul>
-</div>
-<%
-=end%>
+    <div class="dropdown">
+      <button onclick="myFunction()" class="dropbtn" style="background-image: url(<%= cl_image_path(current_user.profile_picture.key) unless current_user.nil? %>); background-size: cover"></button>
+
+      <div id="myDropdown" class="dropdown-content">
+        <%= link_to shoes_path do %>All shoes<% end %>
+        <%= link_to new_shoe_path do %>Add shoes<% end %>
+        <%= link_to about_path do %>About<% end %>
+        <hr>
+        <% if current_user.nil? %>
+        <%= link_to new_user_session_path do %>Log in<% end %>
+        <% else %>
+        <%= link_to profile_path do %>Profile<% end %>
+        <% end %>
+        <% if current_user.nil? == false %>
+        <%= link_to destroy_user_session_path, :method => :delete do %>Log out<% end %>
+        <% end %>
+      </div>
+    </div>
