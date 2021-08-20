@@ -1,4 +1,5 @@
 <div class='homepage'>
+<%= link_to shoes_path do %>
   <div id="carousel-example-1z" class="carousel slide carousel-fade z-depth-1-half" data-ride="carousel" data-interval="2500">
     <!--Indicators-->
     <ol class="carousel-indicators">
@@ -37,6 +38,7 @@
     </a>
     <!--/.Controls-->
   </div>
+<% end %>
   <div class="homecards">
     <div class="card c1">
       <% shoe = @shoes[0] %>
