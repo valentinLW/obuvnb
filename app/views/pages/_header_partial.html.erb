@@ -1,59 +1,52 @@
 <!-- Header -->
-<div class="header">
-
-  <div>
-    <%= link_to root_path do %>
-    <%= image_tag ("/assets/logo.png") %>
-    <% end %>
-  </div>
-
-  <script>
-
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
-
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
+<div class="flexbox-header">
+  <div class="header">
+    <div>
+      <%= link_to root_path do %>
+      <%= image_tag ("/assets/logo.png") %>
+      <% end %>
+    </div>
+    <script>
+      function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
       }
-    }
-  }
-}
 
-</script>
+      window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+          var dropdowns = document.getElementsByClassName("dropdown-content");
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+              openDropdown.classList.remove('show');
+            }
+          }
+        }
+      }
+    </script>
 
-
-</div>
-
-
-    <div class="dropdown">
-
+  </div>
+   <div class="dropdown">
     <% if current_user.nil? %>
       <button onclick="myFunction()" class="dropbtn" style="background-image: url(/assets/obuv_logo.png); background-size: cover"></button>
-
-<% else %>
-  <button onclick="myFunction()" class="dropbtn" style="background-image: url(<%= cl_image_path(current_user.profile_picture.key) %>); background-size: cover"></button>
-
-<% end %>
-
-      <div id="myDropdown" class="dropdown-content">
-        <%= link_to shoes_path do %>All shoes<% end %>
-        <%= link_to new_shoe_path do %>Add shoes<% end %>
-        <%= link_to about_path do %>About<% end %>
-        <hr>
-        <% if current_user.nil? %>
-        <%= link_to new_user_session_path do %>Log in<% end %>
-        <% else %>
-        <%= link_to profile_path do %>Profile<% end %>
-        <% end %>
-        <% if current_user.nil? == false %>
-        <%= link_to destroy_user_session_path, :method => :delete do %>Log out<% end %>
-        <% end %>
-      </div>
+    <% else %>
+      <button onclick="myFunction()" class="dropbtn" style="background-image: url(<%= cl_image_path(current_user.profile_picture.key) %>); background-size: cover"></button>
+    <% end %>
+    <div id="myDropdown" class="dropdown-content">
+      <%= link_to shoes_path do %>All shoes<% end %>
+      <%= link_to new_shoe_path do %>Add shoes<% end %>
+      <%= link_to bookings_path do %>Bookings<% end %>
+      <%= link_to about_path do %>About<% end %>
+      <hr>
+      <% if current_user.nil? %>
+      <%= link_to new_user_session_path do %>Log in<% end %>
+      <% else %>
+      <%= link_to profile_path do %>Profile<% end %>
+      <% end %>
+      <% if current_user.nil? == false %>
+      <%= link_to destroy_user_session_path, :method => :delete do %>Log out<% end %>
+      <% end %>
     </div>
+  </div>
+
+</div>
