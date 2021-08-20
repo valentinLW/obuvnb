@@ -13,12 +13,17 @@
   </head>
 
   <body class="bg-white fullwidth">
-  <%= render '/shared/flashes' %>
   <%= render "pages/header_partial" %>
+  <%= render '/shared/flashes' %>
     <div class="container main-content">
+    <br>
+    <br>
+    <br>
+    <br>
       <%= yield %>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
     </div>
+    <%= render "pages/footer_partial" %>
   </body>
 </html>

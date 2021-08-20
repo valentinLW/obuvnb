@@ -1,11 +1,21 @@
-<%= form_tag shoes_path, method: :get do %>
-  <%= select_tag "size", options_for_select([36.0, 36.5, 37.5, 38.0, 38.5, 39.0, 40.0, 40.5, 41.0, 42.0, 42.5, 43.0, 44.0, 44.5, 45.0, 45.5, 46.0, 47.0, 47.5, 48.0], params[:size].to_f) %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
-<%= form_tag shoes_path, method: :get do %>
-  <%= submit_tag "reset", class: "btn btn-primary" %>
-<% end %>
+<br>
+<br>
+<br>
+<div class="filters d-flex">
+  <%= form_tag shoes_path, method: :get do %>
+  <%= label_tag 'size :'%>
+    <%= select_tag "size", options_for_select([36.0, 36.5, 37.5, 38.0, 38.5, 39.0, 40.0, 40.5, 41.0, 42.0, 42.5, 43.0, 44.0, 44.5, 45.0, 45.5, 46.0, 47.0, 47.5, 48.0], params[:size].to_f), class:"form-select-me" %>
+    <%= submit_tag "Search", class: "btn btn-primary ml-3" %>
+  <% end %>
+  <%= form_tag shoes_path, method: :get do %>
+    <%= submit_tag "reset", class: "btn btn-primary ml-3" %>
+  <% end %>
+</div>
 <div class="shoe-grid">
+<br>
+<br>
+<br>
+<br>
   <% shoes = @shoes.to_a %>
   <% count = 0 %>
   <% while shoes.count > 0 %>
