@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
   def index
     @bookings = Booking.where(user: current_user)
-    @booked = Booking.find_by_sql("SELECT * FROM bookings JOIN shoes ON shoes.id = bookings.shoe_id WHERE shoes.user_id = '#{current_user.id}'")
+    @booked = Booking.joins(:shoe).where("shoes.user_id != '#{current_user.id}'")
   end
 
   def new
@@ -24,6 +24,18 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
+  end
+
+  def accepted
+    @booking = Booking.find(params[:id])
+    @booking = @booking.accepted!
+    redirect_to bookings_path
+  end
+
+  def rejected
+    @booking = Booking.find(params[:id])
+    @booking = @booking.rejected!
+    redirect_to bookings_path
   end
 
   private
