@@ -3,22 +3,9 @@
 <div class='bookingcontainer'>
   <div class='imgcontainer'>
     <%= cl_image_tag @shoe.user.profile_picture.key, class: 'ownerimg'%>
-    <%= cl_image_tag @shoe.image1.key, class:'shoeimg' %>
+    <%= cl_image_tag @shoe.images[0].key, class:'shoeimg' %>
     <%= cl_image_tag current_user.profile_picture.key, class:'userimg' %>
   </div>
-  <%
-=begin%>
- <div class='infobox highlighted'>
-    <h3> Booking </h3>
-    <%= simple_form_for [@shoe, @booking] do |f| %>
-      <%= f.input  :pick_up_date, order: [:day, :month, :year] %>
-      <%= f.input  :return_date, order: [:day, :month, :year] %>
-      <%= f.button :submit, class: 'btn bookingbtn' %>
-    <% end %>
-  </div>
-</div>
-<%
-=end%>
 
 <div id='shoe-booking-dates' class= 'infobox highlighted' data-unavailable="<%= @shoe.unavailable_dates.to_json %>">
     <h3> Book this shoes: </h3>
@@ -28,5 +15,8 @@
            <%= f.input :return_date, as: :string, input_html: {class: "datepicker"}  %>
            <%= f.submit "Book", class: "btn bookingbtn" %>
         <% end %>
+      <% else %>
+      <p><strong>You cannot book your own shoe</strong></p>
+      <p>Have a nice day!</p>
     <% end %>
  </div>
