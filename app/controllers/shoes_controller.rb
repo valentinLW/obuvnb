@@ -26,7 +26,11 @@ class ShoesController < ApplicationController
   end
 
   def index
-    @shoes = Shoe.all
+    if params[:size].present?
+      @shoes = Shoe.where(size: params[:size])
+    else
+      @shoes = Shoe.all
+    end
   end
 
   def show
