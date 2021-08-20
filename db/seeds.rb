@@ -82,7 +82,7 @@ stockx_photos = %w[
   shoe = Shoe.create(
     model: "Nike #{Faker::JapaneseMedia::DragonBall.character}",
     price: rand(2..23),
-    size: [36.0, 36.5, 37.5, 38.0, 38.5, 39.0, 40.0, 40.5, 41.0, 42.0, 42.5, 43.0, 44.0, 44.5, 45.0, 45.5, 46.0, 47, 47.5, 48].sample,
+    size: [36.0, 36.5, 37.5, 38.0, 38.5, 39.0, 40.0, 40.5, 41.0, 42.0, 42.5, 43.0, 44.0, 44.5, 45.0, 45.5, 46.0, 47.0, 47.5, 48.0].sample,
     address: "#{Faker::Address.street_address} #{Faker::Address.city}",
     description: Faker::JapaneseMedia::StudioGhibli.quote,
     user_id: User.all.sample.id
