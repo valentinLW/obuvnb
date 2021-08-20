@@ -41,8 +41,7 @@ class ShoesController < ApplicationController
       :size,
       :price,
       :description,
-      :image1, :image2,
-      :image3, :image4, :image5
+      :images => []
     )
   end
 

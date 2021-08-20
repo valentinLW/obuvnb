@@ -6,11 +6,7 @@
   <%= f.input  :price %>
   <%= f.input  :description %>
   <%= f.input  :address %>
-  <%= f.input :image1, as: :file %>
-  <%= f.input :image2, as: :file %>
-  <%= f.input :image3, as: :file %>
-  <%= f.input :image4, as: :file %>
-  <%= f.input :image5, as: :file %>
+  <%= f.file_field :images, :multiple => true  %>
 
   <%= f.button :submit, class: "btn btn-primary" %>
 <% end %>
