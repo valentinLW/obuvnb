@@ -1,0 +1,49 @@
+.bookingimg {
+width: 15px;
+height: 15px;
+border-radius: 50%;
+}
+
+.bookingindexcontainer {
+  display: inline-flex;
+  justify-content: space-between;
+}
+
+ul {
+  border-bottom: #c1c1c1 1px solid;
+  margin: 15px;
+  padding: 1px;
+}
+
+.eachbooking {
+  line-height: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: #c1c1c1 1px solid;
+}
+
+.eachimg {
+  flex: 1;
+}
+
+.eachdescription {
+  margin: 20px;
+
+}
+
+.bookedimg {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 15%;
+}
+
+.bookinglist {
+  height: auto;
+  margin: 10px;
+}
+
+p {
+  text-align: center;
+}

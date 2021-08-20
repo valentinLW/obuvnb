@@ -3,7 +3,7 @@
 <div class='bookingcontainer'>
   <div class='imgcontainer'>
     <%= cl_image_tag @booking.shoe.user.profile_picture.key, class: 'ownerimg'%>
-    <%= cl_image_tag @booking.shoe.image1.key, class:'shoeimg' %>
+    <%= cl_image_tag @booking.shoe.images[0].key, class:'shoeimg' %>
     <%= cl_image_tag current_user.profile_picture.key, class:'userimg' %>
   </div>
   <div class='infobox'>
