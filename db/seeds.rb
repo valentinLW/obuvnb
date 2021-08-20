@@ -96,7 +96,7 @@ stockx_photos = %w[
   https://images.stockx.com/360/Nike-Dunk-SB-High-Concepts-Stained-Glass/Images/Nike-Dunk-SB-High-Concepts-Stained-Glass/Lv2/img01.jpg?auto=compress&dpr=2&updated_at=1607055048&fit=clip&fm=webp&ixlib=react-9.1.5&q=90&w=400
 ]
 
-3.times do |index|
+30.times do |index|
   puts "creating shoe random #{index + 1}/30"
   file = URI.open(stockx_photos.sample)
   file2 = URI.open(stockx_photos.sample)
