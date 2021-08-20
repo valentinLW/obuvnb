@@ -15,7 +15,7 @@
   </div>
     </div>
     <div class="row">
-    <div class="col-5"></div>
+    <div class="col-5"><%= link_to 'Rent this shoe',  new_shoe_booking_path(@shoe), class:"btn btn-primary" %></div>
     <div class="col-7 d-flex">
     <% unless @shoe.images[1].nil? %>
       <div class="shoe-thumbnail tbig">
@@ -39,5 +39,10 @@
       <% end %>
       </div>
     </div>
-  <%= link_to 'Rent this shoe',  new_shoe_booking_path(@shoe), class:"btn btn-primary" %>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 </div>

@@ -1,2 +1,13 @@
 
-<h2>is a page for renting shoes done by us.</h2>
+<p class="purpletext", style="text-align:center">OBUVnB is shoe rental platform designed by us during 670 batch at LeWagon Berlin. </p>
+<br>
+<br>
+<div class="shoe-grid" style="text-align:center">
+  <% user = User.all %>
+  <% user. each do |us| %>
+    <%= cl_image_tag us.profile_picture.key, class:"shoe-image-profile", style:"border-radius:50%" %>
+    <p class="purpletext", style="text-align:center"><%= us.first_name %><%= us.last_name %></p>
+    <p class="purpletext-2", style="text-align:justified"><%= us.description %></p>
+  <% end %>
+
+</div>
