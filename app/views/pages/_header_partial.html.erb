@@ -33,7 +33,14 @@ window.onclick = function(event) {
 
 
     <div class="dropdown">
-      <button onclick="myFunction()" class="dropbtn" style="background-image: url(<%= cl_image_path(current_user.profile_picture.key) unless current_user.nil? %>); background-size: cover"></button>
+
+    <% if current_user.nil? %>
+      <button onclick="myFunction()" class="dropbtn" style="background-image: url(/assets/obuv_logo.png); background-size: cover"></button>
+
+<% else %>
+  <button onclick="myFunction()" class="dropbtn" style="background-image: url(<%= cl_image_path(current_user.profile_picture.key) %>); background-size: cover"></button>
+
+<% end %>
 
       <div id="myDropdown" class="dropdown-content">
         <%= link_to shoes_path do %>All shoes<% end %>
