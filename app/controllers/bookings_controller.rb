@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
   def index
     @bookings = Booking.where(user: current_user)
-    @booked = Booking.find_by_sql("SELECT * FROM bookings JOIN shoes ON shoes.id = bookings.shoe_id WHERE shoes.user_id = '#{current_user.id}'")
+    @booked = Booking.joins(:shoe).where("shoes.user_id != '#{current_user.id}'")
   end
 
   def new

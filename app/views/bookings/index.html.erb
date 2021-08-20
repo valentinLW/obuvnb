@@ -39,12 +39,14 @@
             <p>For: <%= booking.pick_up_date.strftime("%d.%m.%Y") %> - <%= booking.return_date.strftime("%d.%m.%Y") %></p>
             <p>Balance: €<%= booking.total_price %></p>
 
-            <%= link_to(accepted_path(booking), method: :patch, :class => 'btn bookingbtn-green') do %>
-            <i class="fas fa-check"></i>
-            <% end%>
-            <%= link_to(rejected_path(booking), method: :patch, :class => 'btn bookingbtn-red') do %>
-            <i class="fas fa-times"></i>
-            <% end%>
+            <% if booking.pending? %>
+              <%= link_to(accepted_path(booking), method: :patch, :class => 'btn bookingbtn-green') do %>
+              <i class="fas fa-check"></i>
+              <% end%>
+              <%= link_to(rejected_path(booking), method: :patch, :class => 'btn bookingbtn-red') do %>
+              <i class="fas fa-times"></i>
+              <% end%>
+            <% end %>
           </div>
        </div>
       <% end %>
