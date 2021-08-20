@@ -1,0 +1,23 @@
+.homepage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.carouselimg {
+  border-radius: 50%;
+  height: 50%;
+}
+
+#carousel-example-1z {
+  width: 100%;
+  padding: 50px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.carousel-inner {
+  border-radius: 50%;
+  box-shadow: 0px 0px 30px 0px #949494;
+}
