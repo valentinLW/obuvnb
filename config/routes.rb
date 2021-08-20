@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   resources :shoes, only: %i[new create index show edit update] do
     resources :bookings, only: %i[new create]
   end
-  resources :bookings, only: %i[show index]
+  resources :bookings, only: %i[edit show index]
 end

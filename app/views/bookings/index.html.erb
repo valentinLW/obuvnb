@@ -13,7 +13,7 @@
   </div>
 
   <div class='infobox highlighted bookinglist'>
-  <h3> Booked my Shoes </h3>
+  <h3> My Booked Shoes </h3>
       <% @booked.each do |booking| %>
         <div class='eachbooking'>
           <div class='eachimg'>
@@ -25,6 +25,7 @@
             <p>Booked by: <%= booking.shoe.user.first_name %>  <%= booking.shoe.user.last_name %></p>
             <p>For: <%= booking.pick_up_date.strftime("%d.%m.%Y") %> - <%= booking.return_date.strftime("%d.%m.%Y") %></p>
             <p>Balance: €<%= booking.total_price %></p>
+            <%= link_to 'Confirm booking', bookings_path(booking.id), method: :post %>
           </div>
        </div>
       <% end %>
