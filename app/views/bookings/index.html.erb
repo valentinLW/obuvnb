@@ -5,25 +5,48 @@
     <h3> My Bookings </h3>
       <% @bookings.each do |booking| %>
       <ul>
-        <%= link_to booking_path(booking) do %>
-        <%= cl_image_tag booking.shoe.images[0].key, class:'bookingimg' %>  <%= booking.shoe.model %>
-        <% end %>
+        <li>
+          <% if booking.pending?%>
+            <%= link_to booking_path(booking) do %>
+            <%= cl_image_tag booking.shoe.images[0].key, class:'bookingimg' %>  <%= booking.shoe.model %>
+            <% end %>
+              <p class="pending"><%= booking.status %></p>
+              <% elsif booking.accepted?%>
+              <p class="accepted"><%= booking.status %></p>
+              <% elsif booking.rejected?%>
+              <p class="rejected"><%= booking.status %></p>
+              <% end %>
+        </li>
       </ul>
       <% end %>
   </div>
 
   <div class='infobox highlighted bookinglist'>
-  <h3> Booked my Shoes </h3>
+  <h3> My Booked Shoes </h3>
       <% @booked.each do |booking| %>
         <div class='eachbooking'>
           <div class='eachimg'>
             <%= cl_image_tag booking.shoe.images[0].key, class:'bookedimg' %>
+            <% if booking.pending?%>
+            <p class="pending"><%= booking.status %></p>
+            <% elsif booking.accepted?%>
+            <p class="accepted"><%= booking.status %></p>
+            <% elsif booking.rejected?%>
+            <p class="rejected"><%= booking.status %></p>
+            <% end %>
           </div>
           <div class='eachdescription'>
             <p>Model: <%= booking.shoe.model %></p>
             <p>Booked by: <%= booking.shoe.user.first_name %>  <%= booking.shoe.user.last_name %></p>
             <p>For: <%= booking.pick_up_date.strftime("%d.%m.%Y") %> - <%= booking.return_date.strftime("%d.%m.%Y") %></p>
             <p>Balance: €<%= booking.total_price %></p>
+
+            <%= link_to(accepted_path(booking), method: :patch, :class => 'btn bookingbtn-green') do %>
+            <i class="fas fa-check"></i>
+            <% end%>
+            <%= link_to(rejected_path(booking), method: :patch, :class => 'btn bookingbtn-red') do %>
+            <i class="fas fa-times"></i>
+            <% end%>
           </div>
        </div>
       <% end %>
