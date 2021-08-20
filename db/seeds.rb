@@ -96,9 +96,7 @@ stockx_photos = %w[
   https://images.stockx.com/360/Nike-Dunk-SB-High-Concepts-Stained-Glass/Images/Nike-Dunk-SB-High-Concepts-Stained-Glass/Lv2/img01.jpg?auto=compress&dpr=2&updated_at=1607055048&fit=clip&fm=webp&ixlib=react-9.1.5&q=90&w=400
 ]
 
-puts "testing ? (t), heroku ? (h)"
-count = gets.chomp == h ? 30 : 5
-30.times do |index|
+3.times do |index|
   puts "creating shoe random #{index + 1}/30"
   file = URI.open(stockx_photos.sample)
   file2 = URI.open(stockx_photos.sample)
@@ -143,7 +141,7 @@ shoe = Shoe.create(
   price: 7,
   size: 38.0,
   address: "Friedrichstraße 71, 10117 Berlin",
-  description: "The Green Glow Dunk Low showcases the Dunk's signature two-toned color-blocking, as hits of mint green and white come together throughout.",
+  description: "The Green Glow Dunk Low showcases the Dunk's signature two-toned color-blocking.",
   user_id: stan.id
 )
 shoe.images.attach(io: file, filename: 'image1', content_type: 'image/png')
@@ -160,7 +158,7 @@ shoe = Shoe.create(
   price: 7,
   size: 38.0,
   address: "Dessauer Str. 1, 10963 Berlin",
-  description: "DR. MARTENS X RICK OWENS - A spirit of independence and a champion of energetic non-conformity. Rick Owens has been subverting expectations since the early 90s.",
+  description: "DR. MARTENS X RICK OWENS - A spirit of independence and a champion of energetic non-conformity.",
   user_id: vale.id
 )
 shoe.images.attach(io: file, filename: 'image1', content_type: 'image/png')
