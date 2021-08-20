@@ -1,3 +1,11 @@
+<%= form_tag shoes_path, method: :get do %>
+  <%= text_field_tag :size,
+    params[:size],
+    class: "form-control",
+    placeholder: "Select a size"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
 <div class="shoe-grid">
   <% shoes = @shoes.to_a %>
   <% count = 0 %>
