@@ -29,6 +29,13 @@ class BookingsController < ApplicationController
   def accepted
     @booking = Booking.find(params[:id])
     @booking = @booking.accepted!
+    redirect_to bookings_path
+  end
+
+  def rejected
+    @booking = Booking.find(params[:id])
+    @booking = @booking.rejected!
+    redirect_to bookings_path
   end
 
   private
